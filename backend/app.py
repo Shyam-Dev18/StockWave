@@ -15,9 +15,19 @@ from math import ceil # Import ceil for calculating months
 
 app = Flask(__name__)
 app.config.from_object(Config) # Load configuration from Config object
-CORS(app, 
-     origins=["https://stockwave-3.vercel.app"], # Replace with your actual URL
-     supports_credentials=True) # Enable CORS for all routes
+
+# Configure CORS origins via env var (comma-separated), fallback to default
+origins_env = os.environ.get("FRONTEND_ORIGINS")
+if origins_env:
+    allowed_origins = [o.strip() for o in origins_env.split(",") if o.strip()]
+else:
+    allowed_origins = ["https://stockwave-3.vercel.app"]
+
+CORS(
+    app,
+    origins=allowed_origins,
+    supports_credentials=True,
+)
 
 # Initialize SQLAlchemy with the Flask app
 db.init_app(app)
