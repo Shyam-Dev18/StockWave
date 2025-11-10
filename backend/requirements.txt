@@ -14,14 +14,14 @@ requests==2.32.3
 yfinance==0.2.40
 PyJWT
 
-# ---- ML / Prediction (Updated for Compatibility with Python 3.11) ----
-numpy==1.26.4
-scikit-learn==1.5.2
-# TensorFlow 2.14.0 has reliable Python 3.11 wheels on Linux
-
-# This specific protobuf version is required by TensorFlow 2.14.x
-protobuf==3.20.3
-    # Matching TensorBoard to the TensorFlow version
+# ---- ML / Prediction (Updated for Python 3.13 compatibility) ----
+numpy>=2.0.0
+scikit-learn>=1.6.0
+# TensorFlow 2.20.0 has Python 3.13 wheels and is the latest stable
+tensorflow==2.20.0
+# Protobuf version compatible with TensorFlow 2.20.x
+protobuf>=4.25.3
+tensorboard==2.20.0       # Matching TensorBoard to the TensorFlow version
 
 # ---- Visualization ----
 matplotlib==3.9.2
