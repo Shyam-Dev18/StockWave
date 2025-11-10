@@ -16,8 +16,8 @@ PyJWT
 # ---- ML / Prediction (Updated for Compatibility with Python 3.11) ----
 numpy==1.26.4
 scikit-learn==1.5.2
-# Use a version known to have a Python 3.11 wheel
-tensorflow-cpu==2.15.1
+# TensorFlow 2.15.1 CPU wheels exist for Python 3.11 under the 'tensorflow' package on Linux
+tensorflow==2.15.1
 # This specific protobuf version is required by TensorFlow 2.15.x
 protobuf==3.20.3
 tensorboard==2.15.2       # Matching TensorBoard to the TensorFlow version
